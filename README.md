@@ -18,7 +18,7 @@ Pausing OneDrive's file synchronization.
 
 Manually attempting to delete the directory from the command line using Remove-Item -Recurse -Force, which also fails because the files are locked.
 
-It appears a persistent process is holding a lock on the build directory, which is a required step for Gradle to complete a new build and generate the runnable JAR file. This prevents me from compiling and running my latest code.
+This is preventing Gradle from cleaning the project and proceeding with a fresh build. This seems to be an environmental issue on my local machine rather than a problem with the project code itself.
 
 
 
