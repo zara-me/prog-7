@@ -2,23 +2,35 @@
 check it up
 
 
-My program is a Gradle project developed in IntelliJ IDEA. I'm currently unable to run the application because the build process is failing with a file deletion error.
+Build and Deployment Issues
 
-The specific error message is: Unable to delete directory 'C:\Users\User\OneDrive\Desktop\lab7finall\src\common\build\classes\java\main'
+My application is a Gradle-based project developed in IntelliJ IDEA. I am currently facing two primary issues that prevent successful execution:
 
-The error indicates that Gradle cannot clean the previous build files because another process has a lock on one or more files in the build directory. This is preventing the build task from completing successfully.
+1. Local Build Failure (Windows Environment)
 
-I've already tried several solutions, including:
+Error: Gradle build process fails during cleanup phase
 
-Stopping the Gradle Daemon using ./gradlew.bat --stop.
+Message: Unable to delete directory 'C:\Users\User\OneDrive\Desktop\lab7finall\src\common\build\classes\java\main'
 
-Closing and restarting IntelliJ IDEA.
+Root Cause: File locking by external processes prevents directory deletion
 
-Pausing OneDrive's file synchronization.
+Attempted Solutions:
 
-Manually attempting to delete the directory from the command line using Remove-Item -Recurse -Force, which also fails because the files are locked.
+Stopped Gradle daemon (./gradlew.bat --stop)
 
-This is preventing Gradle from cleaning the project and proceeding with a fresh build. This seems to be an environmental issue on my local machine rather than a problem with the project code itself.
+Restarted IntelliJ IDEA
 
+Paused OneDrive synchronization
 
+Manual deletion attempts (unsuccessful due to file locks)
 
+2. Database Connection Error (Runtime)
+
+Issue: Server application (server.jar) fails to start
+
+Error: Connection to PostgreSQL at localhost:5433 refused
+
+Status: Application built but cannot run without database access
+
+Conclusion:
+The build issue appears to be environment-specific (file locking on Windows/OneDrive). The runtime dependency on PostgreSQL must be resolved before the application can function. Both issues are environmental rather than code-related.
