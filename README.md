@@ -34,3 +34,4 @@ Status: Application built but cannot run without database access
 
 Conclusion:
 The build issue appears to be environment-specific (file locking on Windows/OneDrive). The runtime dependency on PostgreSQL must be resolved before the application can function. Both issues are environmental rather than code-related.
+<img width="724" height="460" alt="image" src="https://github.com/user-attachments/assets/2265db1b-afa8-4af5-b144-f15fc554a32f" />
